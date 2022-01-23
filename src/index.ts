@@ -1,3 +1,3 @@
 export * from './constants'
-export { default as parsePgTime } from './parsePgTime'
+export { default as parsePgTimestamp } from './parsePgTimestamp'
 export { default as formatPgTime } from './formatPgTime'
