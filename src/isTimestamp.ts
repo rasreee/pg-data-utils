@@ -1,16 +1,5 @@
+import { timestampPattern } from './patterns'
 import { Timestamp } from './types'
-
-function concatRegexp(reg: RegExp, exp: RegExp) {
-  let flags = reg.flags + exp.flags
-  flags = Array.from(new Set(flags.split(''))).join()
-
-  return new RegExp(reg.source + exp.source, flags)
-}
-
-export const calendarDatePattern = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/
-export const timePattern = /(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)/g
-
-export const timestampPattern = concatRegexp(calendarDatePattern, timePattern)
 
 export default function isTimestamp(s: string): s is Timestamp {
   return timestampPattern.test(s)

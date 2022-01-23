@@ -1,8 +1,8 @@
 import invariant from 'tiny-invariant'
-import isTimestamp from './isTimestamp'
+import { timestampPattern } from './patterns'
 
 export default function parsePgTimestamp(timestamp: string): Date {
-  invariant(isTimestamp(timestamp), 'Invalid timestamp')
+  invariant(timestampPattern.test(timestamp), 'Invalid timestamp')
   const result = new Date(timestamp)
 
   return result
