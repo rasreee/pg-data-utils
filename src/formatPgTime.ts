@@ -1,7 +1,7 @@
 import { PG_TIME_FORMAT } from './constants'
-import { format } from './lib/format'
+import format from 'date-fns/format'
 
-export function toPgTime(date: Date): string {
+export default function formatPgTime(date: Date): string {
   const pgTime = format(date, PG_TIME_FORMAT)
 
   return pgTime
