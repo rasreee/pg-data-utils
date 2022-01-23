@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "license": "MIT",
-  "scripts": {
+  "modules": "esm/index.js",
+  "module": "esm/index.js",  "scripts": {
     "lint": "eslint --ignore-path .gitignore --cache --ext .js,.jsx,.ts,.tsx ./",
     "format": "yarn run lint --fix"
   },
