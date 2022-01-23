@@ -1,16 +1,13 @@
 import { PG_TIME_FORMAT } from './constants'
 import format from 'date-fns/format'
-import { Time } from './types'
+import { TimeString } from './types'
 import invariant from 'tiny-invariant'
+import { isTimeString } from './validators'
 
-export function isTime(s: string): s is Time {
-  return s.includes(':') && s.split(':').length >= 2 && s.split(':').every((value) => isDateStringValue(value))
-}
-
-export default function formatPgTime(date: Date): Time {
+export default function formatPgTime(date: Date): TimeString {
   const pgTime = format(date, PG_TIME_FORMAT)
 
-  invariant(isTime(pgTime))
+  invariant(isTimeString(pgTime))
 
   return pgTime
 }

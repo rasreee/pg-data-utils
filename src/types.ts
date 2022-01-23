@@ -1,5 +1,7 @@
-export type Time = `${string}:${string}:${string}`
+export type TimeString = `${string}:${string}:${string}` | `${string}:${string}:${string}:${string}`
 
 export type CalendarDate = `${string}-${string}-${string}`
 
-export type Timestamp = `${CalendarDate} ${Time}`
+export type TimestampString = `${CalendarDate} ${TimeString}`
+
+export type Time = { hours: number; minutes: number; seconds: number; ms?: number }
