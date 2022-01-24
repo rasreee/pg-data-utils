@@ -1,25 +1,25 @@
-import { isPgTimestampString, parsePgTimestamp } from 'src'
+import { isPgTimestamp, parsePgTimestamp } from 'src'
 
 describe('timestamp', () => {
-  describe('isPgTimestampString', () => {
+  describe('isPgTimestamp', () => {
     it('valid timestamp with no milliseconds', () => {
       const input = '2022-12-11 22:22:22'
-      expect(isPgTimestampString(input)).toBeTruthy()
+      expect(isPgTimestamp(input)).toBeTruthy()
     })
 
     it('valid timestamp with milliseconds', () => {
       const input = '2022-12-11 22:22:22:22'
-      expect(isPgTimestampString(input)).toBeTruthy()
+      expect(isPgTimestamp(input)).toBeTruthy()
     })
 
     it('invalid timestamp #1', () => {
       const input = '2022-12-11'
-      expect(isPgTimestampString(input)).toBeFalsy()
+      expect(isPgTimestamp(input)).toBeFalsy()
     })
 
     it('invalid timestamp #1', () => {
       const input = '22:22:22'
-      expect(isPgTimestampString(input)).toBeFalsy()
+      expect(isPgTimestamp(input)).toBeFalsy()
     })
   })
 

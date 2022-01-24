@@ -1,20 +1,20 @@
-import { isPgTimeString, parsePgTime } from 'src'
+import { isPgTime, parsePgTime } from 'src'
 
 describe('time', () => {
-  describe('isPgTimeString', () => {
+  describe('isPgTime', () => {
     it('valid time with no milliseconds', () => {
       const input = ' 22:22:22'
-      expect(isPgTimeString(input)).toBeTruthy()
+      expect(isPgTime(input)).toBeTruthy()
     })
 
     it('valid time with milliseconds', () => {
       const input = '22:22:22:11'
-      expect(isPgTimeString(input)).toBeTruthy()
+      expect(isPgTime(input)).toBeTruthy()
     })
 
     it('invalid time #1', () => {
       const input = '2999'
-      expect(isPgTimeString(input)).toBeFalsy()
+      expect(isPgTime(input)).toBeFalsy()
     })
   })
 

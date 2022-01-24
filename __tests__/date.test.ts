@@ -1,15 +1,15 @@
-import { isPgDateString, parsePgDate } from 'src'
+import { isPgDate, parsePgDate } from 'src'
 
 describe('date', () => {
-  describe('isPgDateString', () => {
+  describe('isPgDate', () => {
     it('valid date', () => {
       const input = ' 2022-01-22'
-      expect(isPgDateString(input)).toBeTruthy()
+      expect(isPgDate(input)).toBeTruthy()
     })
 
     it('invalid date #1', () => {
       const input = '22-22-22'
-      expect(isPgDateString(input)).toBeFalsy()
+      expect(isPgDate(input)).toBeFalsy()
     })
   })
 
