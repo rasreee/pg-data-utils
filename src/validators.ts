@@ -1,10 +1,20 @@
-import { timePattern, timestampPattern } from './patterns'
-import { TimestampString, TimeString } from './types'
+import {
+  calendarDatePattern,
+  timePatternNoMs,
+  timePatternWithMs,
+  timestampPatternNoMs,
+  timestampPatternWithMs
+} from './patterns'
+import { CalendarDateString, TimestampString, TimeString } from './types'
 
 export function isTimestampString(s: string): s is TimestampString {
-  return timestampPattern.test(s)
+  return timestampPatternNoMs.test(s) || timestampPatternWithMs.test(s)
 }
 
 export function isTimeString(s: string): s is TimeString {
-  return timePattern.test(s)
+  return timePatternNoMs.test(s) || timePatternWithMs.test(s)
+}
+
+export function isCalendarDateString(s: string): s is CalendarDateString {
+  return calendarDatePattern.test(s)
 }

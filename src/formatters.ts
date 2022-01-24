@@ -4,7 +4,7 @@ import { TimeString } from './types'
 import invariant from 'tiny-invariant'
 import { isTimeString } from './validators'
 
-export default function formatPgTime(date: Date): TimeString {
+export function formatPgTime(date: Date): TimeString {
   const pgTime = format(date, PG_TIME_FORMAT)
 
   invariant(isTimeString(pgTime))
