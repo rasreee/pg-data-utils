@@ -5960,9 +5960,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-date-fns@workspace:.":
+"pg-data-types@workspace:.":
   version: 0.0.0-use.local
-  resolution: "pg-date-fns@workspace:."
+  resolution: "pg-data-types@workspace:."
   dependencies:
     "@types/jest": ^27.4.0
     "@types/node": ^14.6.3
