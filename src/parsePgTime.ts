@@ -1,11 +1,8 @@
-import setHours from 'date-fns/setHours'
-import setMilliseconds from 'date-fns/setMilliseconds'
-import setMinutes from 'date-fns/setMinutes'
-import setSeconds from 'date-fns/setSeconds'
 import invariant from 'tiny-invariant'
 import { isPgTime } from './isPgTime'
-import { getBaseDate } from '../_lib/getBaseDate'
+import { getBaseDate } from './_lib/getBaseDate'
 import { TimeValues } from './types'
+import { setHours, setMinutes, setSeconds, setMilliseconds } from 'date-fns'
 
 export function parsePgTimeValues(s: string): TimeValues {
   invariant(isPgTime(s), 'Invalid time')

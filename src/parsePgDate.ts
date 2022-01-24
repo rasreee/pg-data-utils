@@ -1,10 +1,8 @@
-import setDate from 'date-fns/setDate'
-import setMonth from 'date-fns/setMonth'
-import setYear from 'date-fns/setYear'
-import { getBaseDate } from '../_lib/getBaseDate'
+import { getBaseDate } from './_lib/getBaseDate'
 import invariant from 'tiny-invariant'
 import { isPgDate } from './isPgDate'
 import { DateValues } from './types'
+import { setYear, setMonth, setDate } from 'date-fns'
 
 export function parsePgDateValues(s: string): DateValues {
   invariant(isPgDate(s), 'Invalid pgDate')

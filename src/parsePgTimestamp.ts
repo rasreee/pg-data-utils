@@ -1,14 +1,8 @@
-import setDate from 'date-fns/setDate'
-import setHours from 'date-fns/setHours'
-import setMilliseconds from 'date-fns/setMilliseconds'
-import setMinutes from 'date-fns/setMinutes'
-import setMonth from 'date-fns/setMonth'
-import setSeconds from 'date-fns/setSeconds'
-import setYear from 'date-fns/setYear'
 import invariant from 'tiny-invariant'
 import { isPgTimestamp } from './isPgTimestamp'
-import { getBaseDate } from '../_lib/getBaseDate'
+import { getBaseDate } from './_lib/getBaseDate'
 import { TimestampValues } from './types'
+import { setYear, setMonth, setDate, setHours, setMinutes, setSeconds, setMilliseconds } from 'date-fns'
 
 export function parsePgTimestampValues(timestamp: string): TimestampValues {
   invariant(isPgTimestamp(timestamp), 'Invalid timestamp')

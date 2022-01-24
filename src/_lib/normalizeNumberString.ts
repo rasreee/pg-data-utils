@@ -1,4 +1,4 @@
-export default function normalizeDateValue(value: string): string {
+export function normalizeDateValue(value: string): string {
   const zeroes: number[] = []
 
   for (let i = 0; i < value.length - 1; i += 1) {
