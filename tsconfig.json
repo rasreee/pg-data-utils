@@ -1,7 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "lib": ["dom", "es2017", "es2018.promise"],
+    "target": "ES2015",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "module": "CommonJS",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "strict": true,
     "moduleResolution": "node",
     "noUnusedLocals": true,
@@ -11,12 +19,10 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
-    "importHelpers": true,
-    "rootDir": "./src",
-    "baseUrl": ".",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "allowJs": true
+    "rootDir": "src",
+    "outDir": "dist/main",
+    "baseUrl": ".", 
+    "esModuleInterop": true
   },
-  "exclude": ["node_modules", "dist", ".yarn", "jest.config.js"]
+  "exclude": ["node_modules", "dist", ".yarn", "__tests__"]
 }

@@ -9,12 +9,13 @@
   "bugs": {
     "url": "https://github.com/rasreee/pg-data-utils/issues"
   },
-  "main": "dist/pg-data-utils.cjs",
-  "module": "dist/pg-data-utils.esm.js",
+  "main": "dist/main/index.js",
+  "module": "dist/module/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "package.json",
+    "README.md"
   ],
   "license": "MIT",
   "engines": {
@@ -24,15 +25,17 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf --no-glob ./dist ./tsconfig.tsbuildinfo ./.eslintcache && yarn cache clean",
-    "build": "yarn clean && cross-env NODE_ENV=production microbundle --tsconfig ./tsconfig.json",
-    "release": "yarn test:all && yarn build && yarn npm publish",
+    "clean": "rimraf --no-glob ./dist ./tsconfig.tsbuildinfo ./.eslintcache",
+    "build": "yarn clean && yarn format && yarn build:all",
+    "build:all": "yarn build:main && yarn build:module",
+    "build:main": "tsc -p tsconfig.json",
+    "build:module": "tsc -p tsconfig.module.json",
+    "release": "yarn test && yarn build && yarn npm publish",
     "lint": "eslint --ignore-path .gitignore --cache --ext .js,.jsx,.ts,.tsx ./",
-    "format": "yarn run lint --fix",
+    "format": "yarn lint --fix",
     "type-check": "rimraf ./tsconfig.tsbuildinfo && tsc --pretty --noEmit",
-    "test": "jest --clearCache && NODE_ENV=test jest",
-    "test:watch": "yarn test --watch",
-    "test:all": "yarn run type-check && yarn test"
+    "test:all": "jest --clearCache && NODE_ENV=test jest",
+    "test": "yarn type-check && yarn test:all"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
