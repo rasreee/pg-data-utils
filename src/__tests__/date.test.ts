@@ -1,4 +1,4 @@
-import { isPgDate, parsePgDate, parsePgDateValues } from '../src'
+import { isPgDate, parsePgDate, parsePgDateValues } from '..'
 
 describe('date', () => {
   describe('isPgDate', () => {
