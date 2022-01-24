@@ -8,4 +8,12 @@ Feel free to open a PR with your own utilities. For large new features, please o
 
 ## Table of Contents
 
-- 
+- date
+	-	toPgDate
+	- parsePgDate
+- time
+	-	toPgTime
+	- parsePgTime
+- timestamp
+	-	toPgTimestamp
+	- parsePgTimestamp
