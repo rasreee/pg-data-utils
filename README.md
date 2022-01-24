@@ -10,10 +10,10 @@ Feel free to open a PR with your own utilities. For large new features, please o
 
 - date
 	-	toPgDate
-	- parsePgDate
+	- parsePgDateValues
 - time
 	-	toPgTime
-	- parsePgTime
+	- parsePgTimeValues
 - timestamp
 	-	toPgTimestamp
-	- parsePgTimestamp
+	- parsePgTimestampValues

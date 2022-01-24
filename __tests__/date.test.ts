@@ -1,4 +1,4 @@
-import { isPgDate, parsePgDate } from '../src'
+import { isPgDate, parsePgDate, parsePgDateValues } from '../src'
 
 describe('date', () => {
   describe('isPgDate', () => {
@@ -13,9 +13,21 @@ describe('date', () => {
     })
   })
 
-  describe('parsePgDate', () => {
+  describe('parsePgDateValues', () => {
     it('valid date', () => {
       const expected = { year: 2000, month: 2, day: 11 }
+      const result = parsePgDateValues('2000-02-11')
+      expect(result).toEqual(expected)
+    })
+
+    it('invalid date', () => {
+      expect(parsePgDateValues.bind(null, '2023')).toThrow()
+    })
+  })
+
+  describe('parsePgDate', () => {
+    it('valid date', () => {
+      const expected = new Date(2000, 1, 11)
       const result = parsePgDate('2000-02-11')
       expect(result).toEqual(expected)
     })

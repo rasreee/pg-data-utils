@@ -1,4 +1,4 @@
-import { isPgTimestamp, parsePgTimestamp } from '../src'
+import { isPgTimestamp, parsePgTimestamp, parsePgTimestampValues } from '../src'
 
 describe('timestamp', () => {
   describe('isPgTimestamp', () => {
@@ -23,21 +23,39 @@ describe('timestamp', () => {
     })
   })
 
-  describe('parsePgTimestamp', () => {
+  describe('parsePgTimestampValues', () => {
     it('valid timestamp', () => {
       const timestamp = { year: 2022, month: 2, day: 23, hours: 22, minutes: 1, seconds: 1, ms: 0 }
-      const result = parsePgTimestamp('2022-02-23 22:01:01')
+      const result = parsePgTimestampValues('2022-02-23 22:01:01')
       expect(result).toEqual(timestamp)
     })
 
     it('valid timestamp with milliseconds', () => {
       const timestamp = { year: 2022, month: 2, day: 23, hours: 22, minutes: 1, seconds: 1, ms: 55 }
-      const result = parsePgTimestamp('2022-02-23 22:01:01:55')
+      const result = parsePgTimestampValues('2022-02-23 22:01:01:55')
       expect(result).toEqual(timestamp)
     })
 
     it('invalid timestamp', () => {
-      expect(parsePgTimestamp.bind(null, '2022-02-23')).toThrow()
+      expect(parsePgTimestampValues.bind(null, '2022-02-23')).toThrow()
+    })
+  })
+
+  describe('parsePgTimestamp', () => {
+    it('valid timestamp no milliseconds', () => {
+      const expected = new Date(2000, 0, 1, 1, 1, 1)
+      const result = parsePgTimestamp('2000-01-01 01:01:01')
+      expect(result).toEqual(expected)
+    })
+
+    it('valid timestamp with milliseconds', () => {
+      const expected = new Date(2000, 0, 1, 1, 1, 1, 1)
+      const result = parsePgTimestamp('2000-01-01 01:01:01:01')
+      expect(result).toEqual(expected)
+    })
+
+    it('invalid timestamp', () => {
+      expect(parsePgTimestamp.bind(null, '01:01')).toThrow()
     })
   })
 })
