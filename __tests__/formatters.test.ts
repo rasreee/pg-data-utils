@@ -1,4 +1,4 @@
-import { formatPgTime } from './formatters'
+import { formatPgTime } from '../src/formatters'
 
 describe('formatters', () => {
   describe('formatPgTime', () => {

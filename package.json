@@ -1,17 +1,17 @@
 {
   "name": "pg-date-fns",
   "version": "1.0.0",
-  "main": "src/index.js",
-  "license": "MIT",
-  "modules": "esm/index.js",
+  "main": "index.js",
   "module": "esm/index.js",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --cache --ext .js,.jsx,.ts,.tsx ./",
     "format": "yarn run lint --fix",
     "type-check": "rimraf ./tsconfig.tsbuildinfo && tsc --pretty --noEmit",
     "test": "jest --clearCache && NODE_ENV=test jest",
     "test:watch": "yarn test --watch",
-    "test:all": "yarn run type-check && yarn test"
+    "test:all": "yarn run type-check && yarn test",
+    "test:build": "./scripts/build/package.sh"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

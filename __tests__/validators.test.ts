@@ -1,4 +1,4 @@
-import { isTimestampString, isTimeString } from './validators'
+import { isTimestampString, isTimeString } from '../src/validators'
 
 describe('validators', () => {
   describe('isTimestampString', () => {

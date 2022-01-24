@@ -1,4 +1,4 @@
-import { parsePgCalendarDate, parsePgTime, parsePgTimestamp } from './parsers'
+import { parsePgCalendarDate, parsePgTime, parsePgTimestamp } from '../src/parsers'
 
 describe('parsers', () => {
   describe('parsePgCalendarDate', () => {
