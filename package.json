@@ -1,9 +1,16 @@
 {
-  "name": "pg-data-types",
-  "author": "Lesley Chang (rasreee)",
+  "name": "pg-data-utils",
+  "author": "Lesley Chang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rasreee/pg-data-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rasreee/pg-data-utils/issues"
+  },
   "version": "1.0.0",
-  "main": "dist/pg-data-types.cjs",
-  "module": "dist/pg-data-types.esm.js",
+  "main": "dist/pg-data-utils.cjs",
+  "module": "dist/pg-data-utils.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
