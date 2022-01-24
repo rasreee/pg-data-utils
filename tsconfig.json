@@ -1,28 +1,25 @@
 {
-  "compilerOptions": {
-    "target": "ES2015",
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-    "module": "CommonJS",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "strict": true,
-    "moduleResolution": "node",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "rootDir": "src",
-    "outDir": "dist/main",
-    "baseUrl": ".", 
-    "esModuleInterop": true
-  },
-  "exclude": ["node_modules", "dist", ".yarn", "__tests__"]
-}
+    "version": "1.8.10",
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "lib": [
+          "dom",
+          "dom.iterable",
+          "esnext"
+        ],
+        "sourceMap": false,
+        "declaration": true,
+        "removeComments": false,
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "noImplicitAny": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "useDefineForClassFields": true
+    },
+    "include": ["./src/**/*.ts"],
+    "exclude": ["node_modules", "dist", ".yarn"]
+  }
+  

@@ -1,5 +1,5 @@
-import { isPgTimestamp } from '../src/isPgTimestamp'
-import { parsePgTimestamp, parsePgTimestampValues } from '../src/parsePgTimestamp'
+import { isPgTimestamp } from '../isPgTimestamp'
+import { parsePgTimestamp, parsePgTimestampValues } from '../parsePgTimestamp'
 
 describe('timestamp', () => {
   describe('isPgTimestamp', () => {

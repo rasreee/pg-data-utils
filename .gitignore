@@ -24,6 +24,8 @@
 # production
 /build
 /dist
+pg-data-utils.module.js
+pg-data-utils.umd.js
 
 # misc
 .DS_Store
