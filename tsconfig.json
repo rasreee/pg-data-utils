@@ -4,8 +4,8 @@
     "lib": ["dom", "es2017", "es2018.promise"],
     "strict": true,
     "moduleResolution": "node",
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
@@ -17,5 +17,5 @@
     "esModuleInterop": true,
     "allowJs": true
   },
-  "exclude": ["node_modules", "dist", "tmp"]
+  "exclude": ["node_modules", "dist", ".yarn"]
 }
